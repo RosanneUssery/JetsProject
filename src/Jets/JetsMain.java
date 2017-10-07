@@ -6,6 +6,7 @@ public class JetsMain {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		int menu;
+		boolean FTL;
 		// need to calculate math for mph to ftl and whatnot.
 		// currency is 'mu'
 
@@ -60,6 +61,25 @@ public class JetsMain {
 			// won't need a separate class for this, just an argument to calculate range
 		} else if (menu == 4) {
 			System.out.println("You have selected \"Add a Spacecraft to the Fleet\".");
+			
+			System.out.println("What is the spacecraft's model?");
+			String model = keyboard.next();
+			System.out.println("What is the spacecraft's speed?");
+			int speed = keyboard.nextInt();
+			System.out.println("What it the spacecraft's range?");
+			int range = keyboard.nextInt();
+			System.out.println("What it the spacecraft's price?");
+			double price = keyboard.nextDouble();
+			
+			SpaceCraft s = new SpaceCraft(model, speed, range, price);
+			SpaceCraft.addSpaceCraft(s);
+			
+			if(SpaceCraft.addSpaceCraft(s)) {
+				System.out.println(s + "added to hangar");
+			}
+			else {
+				System.out.println("Sorry, the hanger is full.");
+			}
 			/*
 			 * User Story #5 
 			 * A user can add custom jets to the fleet.

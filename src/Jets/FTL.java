@@ -22,9 +22,9 @@ public class FTL extends SpaceCraft {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append(super.toString());
-		builder.append("FTL [fTL=");
+		builder.append("( FTL=");
 		builder.append(fTL);
-		builder.append("]");
+		builder.append(") ");
 		return builder.toString();
 	} 
 	

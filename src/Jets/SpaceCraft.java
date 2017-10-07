@@ -97,16 +97,30 @@ public class SpaceCraft {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("SpaceCraft [model=");
+		builder.append("SpaceCraft ");
 		builder.append(model);
-		builder.append(", speed=");
+		builder.append(" (speed ");
 		builder.append(speed);
-		builder.append(", range=");
+		builder.append(") (range ");
 		builder.append(range);
-		builder.append(", price=");
+		builder.append(") (price ");
 		builder.append(price);
-		builder.append("]");
+		builder.append(")");
 		return builder.toString();
+	}
+
+	public static boolean addSpaceCraft(SpaceCraft s) {
+		boolean added = false;
+		for (int i = 0; i < crafts.length; i++) {
+			if (crafts[i] == null) {
+				crafts[i] = s;
+				added = true;
+				break;
+			}
+		
+		}
+		return added;
+		
 	}
 
 }
