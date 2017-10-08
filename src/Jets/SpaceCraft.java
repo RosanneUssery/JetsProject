@@ -1,6 +1,6 @@
 package Jets;
 
-public class SpaceCraft implements Pilot{
+public class SpaceCraft {
 	private String model;
 	private int speed;
 	private int range;
@@ -54,6 +54,17 @@ public class SpaceCraft implements Pilot{
 			}
 		}
 		return farthest;
+	}
+	
+	public static void  doPilot() {
+//		SpaceCraft givePilots = crafts [0];
+		for (SpaceCraft assign : crafts) {
+			if (assign != null) {
+				System.out.print(assign);
+				System.out.println(Pilots.assignPilots());
+			}
+		}
+		
 	}
 
 	public String getModel() {

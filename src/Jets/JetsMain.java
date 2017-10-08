@@ -6,8 +6,6 @@ public class JetsMain {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		int menu;
-		// need to calculate math for mph to ftl and whatnot.
-		// currency is 'mu'
 
 		// below ASCII images
 		System.out.println("                      .");
@@ -27,7 +25,8 @@ public class JetsMain {
 			System.out.println("|  2. View Fastest Spacecraft                |");
 			System.out.println("|  3. View Spacecraft with the Longest Range |");
 			System.out.println("|  4. Add a Spacecraft to the Fleet          |");
-			System.out.println("|  5. Quit                                   |");
+			System.out.println("|  5. Assign a pilot to a Spacecraft         |");
+			System.out.println("|  6. Quit                                   |");
 			System.out.println("|____________________________________________|");
 			/*
 			 * User Story #1 There is a menu with 5 options: List fleet / View fastest jet /
@@ -123,14 +122,24 @@ public class JetsMain {
 				// this will interface with an already existing array of other spaceships
 				// Have the user input the info and add it to the array
 			}
+			else if (menu ==5){
+				System.out.println("You have selected \"Assign a pilot to a Spacecraft\".");
+				SpaceCraft.doPilot(); 
+				/*this works to assign a pilot to a ship, but since it's random, the same
+				 * pilot can be used more than once. Not sure how to fix that yet.
+				*/
+				
+			}
 
-		} while (menu < 5);
+		} while (menu < 6);
 		System.out.println("Have a good day.");
 		/*
 		 * * User Story #4 Quit exits the program.
 		 */
 		keyboard.close();
+		
 	}
+	
 }
 /*
  * Space fleet! hangars = planets pilots + species
