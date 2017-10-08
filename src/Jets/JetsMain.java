@@ -6,7 +6,6 @@ public class JetsMain {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		int menu;
-		boolean FTL;
 		// need to calculate math for mph to ftl and whatnot.
 		// currency is 'mu'
 
@@ -19,79 +18,118 @@ public class JetsMain {
 		System.out.println("[|_/\"\"           .' \\ | / '.          \"\"\\_|]");
 		System.out.println("                 ---'\\|/'---");
 		System.out.println("                      '");
-
 		System.out.println("Welcome to the Colonial Spaceport.");
-		System.out.println("Please select from one of the following options:");
-		System.out.println("______________________________________________");
-		System.out.println("|  1. List Fleet                             |");
-		System.out.println("|  2. View Fastest Spacecraft                |");
-		System.out.println("|  3. View Spacecraft with the Longest Range |");
-		System.out.println("|  4. Add a Spacecraft to the Fleet          |");
-		System.out.println("|  5. Quit                                   |");
-		System.out.println("|____________________________________________|");
-		/*
-		 * User Story #1 There is a menu with 5 options: List fleet / View fastest jet /
-		 * View jet with longest range / Add a jet to Fleet / Quit
-		 */
-		menu = keyboard.nextInt();
-		if (menu == 1) {
-			System.out.println("You have selected \"List Fleet\".");
-			/*
-			 * User Story #2 List fleet prints out the model, speed, range, and price of
-			 * each jet. (There must be at least 5 jets stored when the program starts)
-			 */
-			SpaceCraft.listCraft();
-			
-			
-		} else if (menu == 2) {
-			System.out.println("You have selected \"View Fastest Spacecraft\".");
-			
-			String name = SpaceCraft.fastestCraft().getModel(); //method chaining
-			System.out.println(name);
-			/*
-			 * User Story #3 The view fastest jet and longest range options both print out
-			 * all of the information about their jets.
-			 */
-			// won't need a separate class for this, just an argument to calculate speed.
-		} else if (menu == 3) {
-			System.out.println("You have selected \"View Spacecraft with the Longest Range\".");
-			
-			String name = SpaceCraft.farthestCraft().getModel(); //method chaining
-			System.out.println(name);
-			// won't need a separate class for this, just an argument to calculate range
-		} else if (menu == 4) {
-			System.out.println("You have selected \"Add a Spacecraft to the Fleet\".");
-			
-			System.out.println("What is the spacecraft's model?");
-			String model = keyboard.next();
-			System.out.println("What is the spacecraft's speed?");
-			int speed = keyboard.nextInt();
-			System.out.println("What it the spacecraft's range?");
-			int range = keyboard.nextInt();
-			System.out.println("What it the spacecraft's price?");
-			double price = keyboard.nextDouble();
-			
-			SpaceCraft s = new SpaceCraft(model, speed, range, price);
-			SpaceCraft.addSpaceCraft(s);
-			
-			if(SpaceCraft.addSpaceCraft(s)) {
-				System.out.println(s + "added to hangar");
-			}
-			else {
-				System.out.println("Sorry, the hanger is full.");
-			}
-			/*
-			 * User Story #5 
-			 * A user can add custom jets to the fleet.
-			 */ 
-			// this will interface with an already existing array of other spaceships
-			// Have the user input the info and add it to the array
-		} else {
-			/*
-			 * * User Story #4 Quit exits the program.
-			 */
-		}
 
+		do {
+			System.out.println("Please select from one of the following options:");
+			System.out.println("______________________________________________");
+			System.out.println("|  1. List Fleet                             |");
+			System.out.println("|  2. View Fastest Spacecraft                |");
+			System.out.println("|  3. View Spacecraft with the Longest Range |");
+			System.out.println("|  4. Add a Spacecraft to the Fleet          |");
+			System.out.println("|  5. Quit                                   |");
+			System.out.println("|____________________________________________|");
+			/*
+			 * User Story #1 There is a menu with 5 options: List fleet / View fastest jet /
+			 * View jet with longest range / Add a jet to Fleet / Quit
+			 */
+			menu = keyboard.nextInt();
+
+			if (menu == 1) {
+				System.out.println("You have selected \"List Fleet\".");
+				/*
+				 * User Story #2 List fleet prints out the model, speed, range, and price of
+				 * each jet. (There must be at least 5 jets stored when the program starts)
+				 */
+				SpaceCraft.listCraft();
+				System.out.println();
+				System.out.println("Press 1 to return to the main menu. Press 2 to exit.");
+				int menu2;
+				menu2 = keyboard.nextInt();
+				if (menu2 == 1) {
+					continue;
+				} else if (menu2 == 2) {
+					break;
+				}				/*
+				 * if (menu2 != 1 && menu2 != 2) {
+				 * System.out.println("Please select either 1 or 2"); }
+				 */
+
+			} else if (menu == 2) {
+				System.out.println("You have selected \"View Fastest Spacecraft\".");
+
+				String name = SpaceCraft.fastestCraft().getModel(); // method chaining
+				System.out.println(name);
+				System.out.println();
+				System.out.println("Press 1 to return to the main menu. Press 2 to exit.");
+				int menu2;
+				menu2 = keyboard.nextInt();
+				if (menu2 == 1) {
+					continue;
+				} else if (menu2 == 2) {
+					break;
+				}
+				/*
+				 * User Story #3 The view fastest jet and longest range options both print out
+				 * all of the information about their jets.
+				 */
+				// won't need a separate class for this, just an argument to calculate speed.
+			} else if (menu == 3) {
+				System.out.println("You have selected \"View Spacecraft with the Longest Range\".");
+
+				String name = SpaceCraft.farthestCraft().getModel(); // method chaining
+				System.out.println(name);
+				System.out.println();
+				System.out.println("Press 1 to return to the main menu. Press 2 to exit.");
+				int menu2;
+				menu2 = keyboard.nextInt();
+				if (menu2 == 1) {
+					continue;
+				} else if (menu2 == 2) {
+					break;
+				}
+				// won't need a separate class for this, just an argument to calculate range
+			} else if (menu == 4) {
+				System.out.println("You have selected \"Add a Spacecraft to the Fleet\".");
+
+				System.out.println("What is the spacecraft's model?");
+				String model = keyboard.next();
+				System.out.println("What is the spacecraft's speed (MPH)?");
+				int speed = keyboard.nextInt();
+				System.out.println("What it the spacecraft's range?");
+				int range = keyboard.nextInt();
+				System.out.println("What it the spacecraft's price?");
+				double price = keyboard.nextDouble();
+
+				SpaceCraft s = new SpaceCraft(model, speed, range, (int) price);
+
+				if (SpaceCraft.addSpaceCraft(s)) {
+					System.out.println(s + "added to hangar");
+				} else {
+					System.out.println("Sorry, the hanger is full.");
+				}
+				System.out.println();
+				System.out.println("Press 1 to return to the main menu. Press 2 to exit.");
+				int menu2;
+				menu2 = keyboard.nextInt();
+				if (menu2 == 1) {
+					continue;
+				} else if (menu2 == 2) {
+					break;
+				}
+				/*
+				 * User Story #5 A user can add custom jets to the fleet.
+				 */
+				// this will interface with an already existing array of other spaceships
+				// Have the user input the info and add it to the array
+			}
+
+		} while (menu < 5);
+		System.out.println("Have a good day.");
+		/*
+		 * * User Story #4 Quit exits the program.
+		 */
+		keyboard.close();
 	}
 }
 /*

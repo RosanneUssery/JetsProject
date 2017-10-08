@@ -5,7 +5,7 @@ public class FTL extends SpaceCraft {
 
 
 
-	public FTL(String model, int speed, int range, double price, boolean fTL) {
+	public FTL(String model, int speed, int range, int price, boolean fTL) {
 		super(model, speed, range, price);
 		this.fTL = fTL;
 	}

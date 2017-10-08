@@ -1,26 +1,26 @@
 package Jets;
 
-public class SpaceCraft {
+public class SpaceCraft implements Pilot{
 	private String model;
 	private int speed;
 	private int range;
-	private double price;
+	private int price;
 	private static SpaceCraft[] crafts;
 
-	public SpaceCraft(String model, int speed, int range, double price) {
+	public SpaceCraft(String model, int speed, int range, int price) {
 		this.model = model;
 		this.price = price;
 		this.range = range;
-		this.speed = speed;
+		this.speed = speed / (int)(767.269);
 	}
 
 	static { // initializes craft once for the class
 		crafts = new SpaceCraft[10];
-		crafts[0] = new SpaceCraft("Explorer", 100, 500, 4500.0);
-		crafts[1] = new SpaceCraft("Scout", 200, 100, 3300.00);
-		crafts[2] = new FTL("Fighter", 300, 200, 5500.00, true);
-		crafts[3] = new FTL("Medical", 400, 200, 6000.00, true);
-		crafts[4] = new FTL("Transport", 500, 300, 7500.00, true);
+		crafts[0] = new SpaceCraft("Explorer", 80_000, 500, 4500);
+		crafts[1] = new SpaceCraft("Scout", 5_000, 50, 500);
+		crafts[2] = new FTL("Fighter", 90_000, 200, 5500, true);
+		crafts[3] = new FTL("Medical", 60_000, 200, 6000, true);
+		crafts[4] = new FTL("Transport", 70_000, 300, 7500, true);
 	}
 
 	public static void listCraft() {
@@ -84,7 +84,7 @@ public class SpaceCraft {
 		this.range = range;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 	/*
@@ -99,13 +99,13 @@ public class SpaceCraft {
 		StringBuilder builder = new StringBuilder();
 		builder.append("SpaceCraft ");
 		builder.append(model);
-		builder.append(" (speed ");
+		builder.append(" (speed (% Mach1 ");
 		builder.append(speed);
 		builder.append(") (range ");
 		builder.append(range);
-		builder.append(") (price ");
+		builder.append(" au) (price ");
 		builder.append(price);
-		builder.append(")");
+		builder.append("\u03BC) ");
 		return builder.toString();
 	}
 
