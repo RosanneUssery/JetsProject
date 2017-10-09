@@ -66,7 +66,21 @@ public class SpaceCraft {
 		}
 		
 	}
-
+	
+/*	public static void listCraftNumbers() {
+		System.out.println("*** SpaceCraft in this Hangar ***");
+		for (SpaceCraft craft : crafts) {
+			if (craft != null) {
+				int i = 1;
+				i = i++;
+				System.out.print(i);
+				System.out.println(craft);
+			}
+		}
+	}*/
+	//this is incomplete and I need to figure out how to iterate a number for each ship to refer to it for the menu in JetsMain
+	//once I figure that out, I'll be able to have the user select a pilot for their ship
+	
 	public String getModel() {
 		return model;
 	}

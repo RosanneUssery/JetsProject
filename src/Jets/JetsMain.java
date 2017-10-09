@@ -130,6 +130,13 @@ public class JetsMain {
 				*/
 				
 			}
+			
+/*			else if (menu == 6) {
+				System.out.println("You have selected \"Hire a pilot for your ship\"");
+				System.out.println("Which ship would you like to hire a pilot for?");
+				SpaceCraft.listCraftNumbers();
+			}*/
+			//see comments for listCraftNumbers in SpaceCraft
 
 		} while (menu < 6);
 		System.out.println("Have a good day.");
